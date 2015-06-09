@@ -1,6 +1,6 @@
 package edu.buffalo.pratikla.myappportfolio;
 
-import android.support.v7.app.ActionBarActivity;
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Toast;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,31 +39,35 @@ public class MainActivity extends ActionBarActivity {
     }
 
     public void startSpotifyStreamer(View view) {
-        makeToast("Spotify Streamer");
+        displayAppNameAsToast("Spotify Streamer");
     }
 
     public void startScoresApp(View view) {
-        makeToast("Scores App");
+        displayAppNameAsToast("Scores App");
     }
 
     public void startLibraryApp(View view) {
-        makeToast("Library App");
+        displayAppNameAsToast("Library App");
     }
 
     public void startBuildItBigger(View view) {
-        makeToast("Build It Bigger");
+        displayAppNameAsToast("Build It Bigger");
     }
 
     public void startXyzReader(View view) {
-        makeToast("XYZ Reader");
+        displayAppNameAsToast("XYZ Reader");
     }
 
     public void startCapstone(View view) {
-        makeToast("my Capstone App");
+        displayAppNameAsToast("my Capstone App");
     }
 
-    public void makeToast(String appName) {
+    public void displayAppNameAsToast(String appName) {
         String message = "This button will launch " + appName + "!";
+        makeToast(message);
+    }
+
+    public void makeToast(String message) {
         Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
     }
 
